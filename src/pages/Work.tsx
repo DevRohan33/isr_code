@@ -2,99 +2,65 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
-import { ArrowRight, ExternalLink, TrendingUp } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+
+// Import work images
+import portfolioImg from "@/assets/work/portfolio-website.jpg";
+import ecommerceImg from "@/assets/work/ecommerce-platform.jpg";
+import leadGenImg from "@/assets/work/lead-generation.jpg";
+import chatbotImg from "@/assets/work/ai-chatbot.jpg";
+import appointmentImg from "@/assets/work/appointment-booking.jpg";
+import logoImg from "@/assets/work/logo-design.jpg";
 
 const Work = () => {
-  const projects = [
+  const portfolioProjects = [
     {
-      title: "TechStart E-commerce Platform",
-      category: "E-commerce + AI Automation",
-      description: "Modern online store selling tech gadgets with an integrated AI customer support system that handles product inquiries, order tracking, and returns processing.",
-      challenge: "High volume of customer inquiries was overwhelming the support team, leading to delayed responses and frustrated customers.",
-      solution: "Implemented a comprehensive e-commerce platform with AI-powered customer support that handles 80% of inquiries automatically.",
-      results: [
-        "300% increase in conversion rates",
-        "85% reduction in support response time",
-        "500% increase in customer satisfaction scores",
-        "40% reduction in support costs"
-      ],
-      techStack: ["React", "Node.js", "MongoDB", "AI Chatbot", "Stripe", "WhatsApp API"],
-      features: ["Product catalog", "Shopping cart", "Payment processing", "AI customer support", "Order tracking", "Inventory management"]
+      title: "Creative Portfolio Website",
+      category: "Portfolio & Design",
+      description: "Modern portfolio website for creative professionals with stunning galleries and smooth animations.",
+      image: portfolioImg,
+      techStack: ["React", "Framer Motion", "Tailwind CSS"],
+      features: ["Project Galleries", "Contact Forms", "Responsive Design", "SEO Optimized"]
     },
     {
-      title: "LegalPro Business Website",
-      category: "Business Website + Lead Generation",
-      description: "Professional law firm website with automated lead qualification and appointment scheduling for potential clients.",
-      challenge: "Manual lead qualification process was time-consuming and many potential clients were lost due to slow response times.",
-      solution: "Built a professional website with AI-powered lead qualification bot and smart appointment scheduling system.",
-      results: [
-        "500% increase in qualified leads",
-        "75% faster lead response time",
-        "250% more consultation bookings",
-        "60% improvement in lead-to-client conversion"
-      ],
-      techStack: ["Next.js", "TypeScript", "AI Lead Qualifier", "Calendar API", "CRM Integration"],
-      features: ["Practice area pages", "Attorney profiles", "Client testimonials", "Lead qualification", "Appointment booking", "Case study library"]
+      title: "E-commerce Platform",
+      category: "Online Store",
+      description: "Full-featured e-commerce platform with inventory management and payment processing.",
+      image: ecommerceImg,
+      techStack: ["Next.js", "Stripe", "MongoDB", "Admin Dashboard"],
+      features: ["Product Catalog", "Shopping Cart", "Payment Gateway", "Order Management"]
     },
     {
-      title: "CreativeStudio Portfolio",
-      category: "Portfolio + Automation",
-      description: "Stunning portfolio website for a design agency with integrated project showcase and automated client onboarding process.",
-      challenge: "Time-consuming client onboarding process and difficulty showcasing work effectively to attract premium clients.",
-      solution: "Created an impressive portfolio website with automated client onboarding and project management workflow.",
-      results: [
-        "200% increase in project bookings",
-        "150% higher average project value",
-        "90% reduction in onboarding time",
-        "300% improvement in client inquiries"
-      ],
-      techStack: ["React", "Gatsby", "Contentful", "AI Assistant", "Project Management API"],
-      features: ["Project galleries", "Case studies", "Client testimonials", "Service packages", "Automated onboarding", "Project proposals"]
+      title: "Lead Generation Platform",
+      category: "Business Website",
+      description: "High-converting landing pages designed to capture and qualify leads automatically.",
+      image: leadGenImg,
+      techStack: ["React", "Lead Forms", "CRM Integration", "Analytics"],
+      features: ["Landing Pages", "Contact Forms", "Lead Tracking", "Conversion Optimization"]
     },
     {
-      title: "HealthCare Clinic Website",
-      category: "Healthcare + Appointment System",
-      description: "Modern healthcare website with AI-powered appointment scheduling and patient inquiry system for a multi-specialty clinic.",
-      challenge: "Manual appointment booking was causing scheduling conflicts and patient frustration with long wait times.",
-      solution: "Developed a comprehensive healthcare website with intelligent appointment scheduling and patient support system.",
-      results: [
-        "400% increase in online appointments",
-        "80% reduction in scheduling conflicts",
-        "350% improvement in patient satisfaction",
-        "50% decrease in no-show rates"
-      ],
-      techStack: ["React", "Node.js", "Healthcare API", "AI Scheduler", "HIPAA Compliance"],
-      features: ["Doctor profiles", "Service information", "Appointment booking", "Patient portal", "Insurance verification", "Telemedicine integration"]
+      title: "AI Chat Assistant",
+      category: "AI Automation",
+      description: "Intelligent chatbot that handles customer support and appointment scheduling 24/7.",
+      image: chatbotImg,
+      techStack: ["AI/ML", "Natural Language Processing", "WhatsApp API", "CRM"],
+      features: ["Smart Responses", "Multi-platform", "Lead Qualification", "Appointment Booking"]
     },
     {
-      title: "RestaurantPro Delivery Platform",
-      category: "Food Delivery + AI Assistant",
-      description: "Complete food delivery platform for a restaurant chain with AI assistant for order taking and customer service via WhatsApp.",
-      challenge: "High volume of phone orders during peak hours was overwhelming staff and causing order errors and delays.",
-      solution: "Built a comprehensive delivery platform with AI-powered WhatsApp ordering system and customer service automation.",
-      results: [
-        "600% increase in online orders",
-        "95% reduction in order errors",
-        "70% faster order processing",
-        "250% improvement in customer retention"
-      ],
-      techStack: ["React Native", "Node.js", "WhatsApp Business API", "AI Assistant", "Payment Gateway"],
-      features: ["Menu management", "Order tracking", "Payment processing", "WhatsApp ordering", "Delivery management", "Customer feedback"]
+      title: "Appointment Booking System",
+      category: "Healthcare & Business",
+      description: "Smart scheduling system for healthcare providers and service businesses.",
+      image: appointmentImg,
+      techStack: ["React", "Calendar API", "Payment Integration", "Notifications"],
+      features: ["Online Booking", "Calendar Sync", "Payment Processing", "Automated Reminders"]
     },
     {
-      title: "EduTech Learning Platform",
-      category: "Educational Platform + AI Tutoring",
-      description: "Online learning platform for a coding bootcamp with AI-powered student support and progress tracking system.",
-      challenge: "Students needed 24/7 support for coding questions and course navigation, but instructors weren't always available.",
-      solution: "Created a comprehensive learning platform with AI tutoring assistant and automated progress tracking.",
-      results: [
-        "300% improvement in student engagement",
-        "85% reduction in dropout rates",
-        "400% increase in course completion",
-        "90% student satisfaction rate"
-      ],
-      techStack: ["React", "Python", "AI Tutor", "Video Streaming", "Progress Tracking"],
-      features: ["Course management", "Video lessons", "Code editor", "AI tutoring", "Progress tracking", "Student community"]
+      title: "Brand Identity & Logo Design",
+      category: "Design & Branding",
+      description: "Complete brand identity packages including logos, color schemes, and brand guidelines.",
+      image: logoImg,
+      techStack: ["Adobe Creative Suite", "Brand Guidelines", "Logo Design", "Print Design"],
+      features: ["Logo Design", "Brand Colors", "Typography", "Marketing Materials"]
     }
   ];
 
@@ -128,87 +94,68 @@ const Work = () => {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* Portfolio Grid */}
       <section className="py-20 bg-muted">
         <div className="container">
-          <div className="space-y-16">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-smooth">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Project Info */}
-                  <div className="p-8">
-                    <div className="mb-4">
-                      <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-sm rounded-full mb-4">
-                        {project.category}
-                      </span>
-                      <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground">{project.description}</p>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold mb-2 text-destructive">Challenge:</h4>
-                        <p className="text-sm text-muted-foreground">{project.challenge}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-2 text-primary">Solution:</h4>
-                        <p className="text-sm text-muted-foreground">{project.solution}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.map((tech, techIndex) => (
-                            <span 
-                              key={techIndex}
-                              className="px-2 py-1 bg-muted text-xs rounded-md border"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolioProjects.map((project, index) => (
+              <Card key={index} className="overflow-hidden bg-card shadow-lg hover:shadow-xl transition-smooth group">
+                {/* Project Image */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Button size="sm" variant="hero" className="w-full">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View Project
+                    </Button>
                   </div>
+                </div>
 
-                  {/* Results & Features */}
-                  <div className="p-8 bg-gradient-subtle">
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-4 flex items-center text-success">
-                        <TrendingUp className="h-4 w-4 mr-2" />
-                        Results Achieved:
-                      </h4>
-                      <div className="space-y-2">
-                        {project.results.map((result, resultIndex) => (
-                          <div key={resultIndex} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-success rounded-full"></div>
-                            <span className="text-sm font-medium text-success">{result}</span>
-                          </div>
+                {/* Project Info */}
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="inline-block px-2 py-1 bg-primary text-primary-foreground text-xs rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold mb-2 text-sm">Tech Stack:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.techStack.map((tech, techIndex) => (
+                          <span 
+                            key={techIndex}
+                            className="px-2 py-1 bg-muted text-xs rounded-md border"
+                          >
+                            {tech}
+                          </span>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-4">Key Features:</h4>
-                      <div className="space-y-2">
+                      <h4 className="font-semibold mb-2 text-sm">Key Features:</h4>
+                      <div className="space-y-1">
                         {project.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-sm">{feature}</span>
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-xs text-muted-foreground">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-
-                    <div className="mt-6 pt-6 border-t">
-                      <Button variant="outline" size="sm" className="w-full">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View Case Study
-                      </Button>
-                    </div>
                   </div>
-                </div>
+                </CardContent>
               </Card>
             ))}
           </div>

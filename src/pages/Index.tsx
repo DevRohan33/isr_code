@@ -174,37 +174,62 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Work */}
-      <section className="py-20 bg-muted">
+      {/* Featured Work - Horizontal Scroll */}
+      <section className="py-20 bg-muted overflow-hidden">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Work</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how we've helped businesses like yours achieve remarkable results.
+              See our latest projects showcasing modern websites and AI automation solutions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredWork.map((project, index) => (
-              <Card key={index} className="bg-card hover:shadow-lg transition-smooth">
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Tech Stack:</p>
-                      <p className="text-sm">{project.tech}</p>
+          {/* Horizontal Scrolling Portfolio */}
+          <div className="relative">
+            <div className="flex gap-6 pb-6 overflow-x-auto scrollbar-hide">
+              {[
+                { title: "Portfolio Website", image: "/placeholder.svg", category: "Creative" },
+                { title: "E-commerce Store", image: "/placeholder.svg", category: "Business" },
+                { title: "AI Chatbot", image: "/placeholder.svg", category: "AI Assistant" },
+                { title: "Booking System", image: "/placeholder.svg", category: "Automation" },
+                { title: "Lead Generator", image: "/placeholder.svg", category: "Marketing" },
+                { title: "Brand Identity", image: "/placeholder.svg", category: "Design" },
+              ].map((project, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-80 group cursor-pointer"
+                >
+                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-smooth">
+                    <div className="relative aspect-video overflow-hidden">
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/30 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="text-6xl mb-2">🎨</div>
+                          <p className="text-sm font-medium">{project.title}</p>
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Button size="sm" variant="hero" className="w-full">
+                          View Details
+                        </Button>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-medium text-success">Result:</p>
-                      <p className="text-sm font-semibold text-success">{project.result}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-semibold">{project.title}</h3>
+                        <span className="text-xs px-2 py-1 bg-primary text-primary-foreground rounded-full">
+                          {project.category}
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+            
+            {/* Gradient fade on edges */}
+            <div className="absolute top-0 left-0 w-8 h-full bg-gradient-to-r from-muted to-transparent pointer-events-none" />
+            <div className="absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-muted to-transparent pointer-events-none" />
           </div>
 
           <div className="text-center mt-12">

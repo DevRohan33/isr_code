@@ -61,8 +61,9 @@
     --shadow-xl: 0 20px 25px -5px hsl(215 25% 16% / 0.1), 0 10px 10px -5px hsl(215 25% 16% / 0.04);
     --shadow-glow: 0 0 40px hsl(221 83% 53% / 0.3);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.75rem;
@@ -169,6 +170,16 @@
   
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 
